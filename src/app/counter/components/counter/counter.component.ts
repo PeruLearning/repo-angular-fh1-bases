@@ -8,7 +8,11 @@ import { Component, NgModule } from '@angular/core';
 export class CounterComponent {
   public counter: number = 0;
 
-  public IncreaseBy(value: number = 1) {
+  public increaseBy(value: number = 1) {
     this.counter += value;
+  }
+
+  public resetCounter(): void {
+    this.counter = 0;
   }
 }
