@@ -9,8 +9,13 @@ import { Character } from '../../interfaces/character.interface';
 export class MainPageComponent {
   public characters: Character[] = [];
 
-  public onNewCharacterReceived(newCharacter: Character): void {
-    console.log(newCharacter);
+  public newCharacterHandler(newCharacter: Character): void {
+    debugger;
     this.characters.push(newCharacter);
+  }
+
+  public removeCharacterHandler(id: number): void {
+    debugger;
+    this.characters = this.characters.filter(c => c.id !== id);
   }
 }
