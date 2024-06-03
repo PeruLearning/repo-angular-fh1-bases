@@ -20,7 +20,6 @@ export class AddCharacterComponent {
       name: '',
       power: 0
     };
-
   }
 
   @Output()
