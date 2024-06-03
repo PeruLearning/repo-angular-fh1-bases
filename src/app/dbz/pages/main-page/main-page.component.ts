@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character } from '../../interfaces/character.interface';
+import { DbzService } from '../../services/dbz.service';
 
 @Component({
   selector: 'dbz-main-page',
@@ -7,15 +7,8 @@ import { Character } from '../../interfaces/character.interface';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
-  public characters: Character[] = [];
-
-  public newCharacterHandler(newCharacter: Character): void {
-    debugger;
-    this.characters.push(newCharacter);
-  }
-
-  public removeCharacterHandler(id: number): void {
-    debugger;
-    this.characters = this.characters.filter(c => c.id !== id);
+  constructor(public dbzService: DbzService) {
+ 
+    
   }
 }
