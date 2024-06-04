@@ -7,14 +7,14 @@ import { Character } from '../../interfaces/character.interface';
   styleUrl: './list.component.css'
 })
 export class DbzListComponent {
+
   @Input({ alias: 'list', required: true })
   public characters: Character[] = [];
 
   @Output()
-  public onRemoveEmitter: EventEmitter<number> = new EventEmitter();
+  public onRemove: EventEmitter<string> = new EventEmitter();
 
-  public removeCharacter(index: number): void {
-    debugger;
-    this.onRemoveEmitter.emit(index);
+  public removeCharacter(index: string): void {
+    this.onRemove.emit(index);
   }
 }

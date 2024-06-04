@@ -7,8 +7,8 @@ import { DbzService } from '../../services/dbz.service';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
+
   constructor(public dbzService: DbzService) {
  
-    
   }
 }

@@ -7,32 +7,24 @@ import { Character } from '../../interfaces/character.interface';
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
+
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
   public newCharacter: Character = {
-    id: 0,
+    id: '',
     name: '',
     power: 0
   };
 
   public emitCharacter(): void {
     if (this.newCharacter.name.length === 0) return;
-
-    this.newCharacter.id = this.getRandomInt(1, 999999);
-    debugger;
-    this.onNewCharacterEmmiter.emit(this.newCharacter);
+    this.onNewCharacter.emit(this.newCharacter);
     
     this.newCharacter = {
-      id: 0,
+      id: '',
       name: '',
       power: 0
     };
-  }
-
-  @Output()
-  public onNewCharacterEmmiter: EventEmitter<Character> = new EventEmitter();
-
-  private getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
