@@ -14,7 +14,7 @@ export class DbzListComponent {
   @Output()
   public onRemove: EventEmitter<string> = new EventEmitter();
 
-  public removeCharacter(index: string): void {
+  public onRemoveCharacter(index: string): void {
     this.onRemove.emit(index);
   }
 }

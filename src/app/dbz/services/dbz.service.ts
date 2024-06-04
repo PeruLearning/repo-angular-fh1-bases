@@ -9,12 +9,12 @@ export class DbzService {
   
   public characters: Character[] = [];
 
-  public newCharacterHandler(newCharacter: Character): void {
+  public addCharacter(newCharacter: Character): void {
     newCharacter.id = uuid();
     this.characters.push(newCharacter);
   }
 
-  public removeCharacterHandler(id: string): void {
+  public removeCharacterBydId(id: string): void {
     this.characters = this.characters.filter(c => c.id !== id);
   }
 }
