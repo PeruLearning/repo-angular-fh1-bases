@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:href": "Powershell ./pws/generate-deploy.ps1"
   },
   "private": true,
   "dependencies": {
