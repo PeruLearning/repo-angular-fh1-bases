@@ -10,8 +10,7 @@ export class DbzService {
   public characters: Character[] = [];
 
   public addCharacter(newCharacter: Character): void {
-    newCharacter.id = uuid();
-    this.characters.push(newCharacter);
+    this.characters.push({ ...newCharacter, id: uuid() });
   }
 
   public removeCharacterBydId(id: string): void {
